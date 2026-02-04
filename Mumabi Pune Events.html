@@ -1,0 +1,384 @@
+<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="utf-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+  <title> AI • HR • Finance Events (Mumbai/Pune)</title>
+  <style>
+    :root {
+      --ink:#0f172a;
+      --muted:#475569;
+      --line:#e5e7eb;
+      --soft:#f8fafc;
+      --chipbg:#eef2ff;
+      --chiptext:#3730a3;
+      --shadow: 0 10px 24px rgba(2,6,23,.08);
+    }
+
+    * { box-sizing: border-box; }
+    body {
+      margin: 0;
+      background: #fff;
+      color: var(--ink);
+      font-family: ui-sans-serif, system-ui, -apple-system, Segoe UI, Roboto, Helvetica, Arial;
+    }
+
+    .wrap {
+      max-width: 1180px;
+      margin: 22px auto;
+      padding: 0 14px;
+    }
+
+    .header {
+      border: 1px solid var(--line);
+      border-radius: 18px;
+      background: #fff;
+      box-shadow: var(--shadow);
+      padding: 16px 18px;
+      display: flex;
+      justify-content: space-between;
+      align-items: flex-start;
+      gap: 12px;
+    }
+
+    .header h1 {
+      margin: 0 0 6px 0;
+      font-size: 18px;
+      letter-spacing: .2px;
+    }
+
+    .header .sub {
+      margin: 0;
+      font-size: 12px;
+      color: var(--muted);
+      line-height: 1.35;
+    }
+
+    .badge {
+      font-size: 12px;
+      font-weight: 900;
+      color: var(--muted);
+      white-space: nowrap;
+    }
+
+    .card {
+      margin-top: 14px;
+      border: 1px solid var(--line);
+      border-radius: 18px;
+      overflow: hidden;
+      background: #fff;
+      box-shadow: var(--shadow);
+    }
+
+    table {
+      width: 100%;
+      border-collapse: collapse;
+      table-layout: fixed; /* important: prevents overlap */
+    }
+
+    thead th {
+      background: var(--soft);
+      color: var(--muted);
+      font-size: 11px;
+      text-transform: uppercase;
+      letter-spacing: .08em;
+      font-weight: 900;
+      text-align: left;
+      border-bottom: 1px solid var(--line);
+      padding: 12px 14px;
+    }
+
+    tbody td {
+      border-bottom: 1px solid var(--line);
+      padding: 12px 14px;
+      vertical-align: top;
+      font-size: 12.5px;
+      overflow-wrap: anywhere; /* important: long text wraps */
+      word-break: break-word;
+    }
+
+    tbody tr:last-child td {
+      border-bottom: none;
+    }
+
+    /* Column widths (tuned to avoid overlap) */
+    .col-city { width: 92px; font-weight: 800; }
+    .col-date { width: 110px; font-weight: 900; white-space: nowrap; }
+    .col-end  { width: 110px; color: var(--muted); }
+    .col-time { width: 130px; color: var(--muted); font-weight: 800; }
+    .col-event { width: auto; }
+    .col-open { width: 88px; }
+
+    .event-title {
+      font-weight: 900;
+      margin-bottom: 6px;
+      line-height: 1.25;
+    }
+
+    .event-meta {
+      display: flex;
+      flex-wrap: wrap;
+      gap: 8px;
+      align-items: center;
+      color: var(--muted);
+      line-height: 1.25;
+    }
+
+    .meta {
+      font-weight: 700;
+    }
+
+    .sep {
+      opacity: .65;
+      font-weight: 900;
+    }
+
+    .chip {
+      display: inline-block;
+      padding: 3px 10px;
+      border-radius: 999px;
+      background: var(--chipbg);
+      color: var(--chiptext);
+      border: 1px solid rgba(55,48,163,.16);
+      font-weight: 900;
+      font-size: 11px;
+      white-space: nowrap;
+    }
+
+    .btn {
+      display: inline-block;
+      width: 100%;
+      text-align: center;
+      padding: 9px 10px;
+      border-radius: 12px;
+      border: 1px solid var(--line);
+      background: #fff;
+      color: var(--ink);
+      font-weight: 900;
+      text-decoration: none;
+      white-space: nowrap;
+    }
+
+    .btn:hover {
+      background: var(--soft);
+    }
+
+    /* Mobile: make it readable without collisions */
+    @media (max-width: 900px) {
+      thead { display: none; }
+      table, tbody, tr, td { display: block; width: 100%; }
+      tbody td { border-bottom: none; padding: 10px 14px; }
+      tbody tr {
+        border-bottom: 1px solid var(--line);
+        padding: 6px 0;
+      }
+      .col-open .btn { width: auto; display: inline-block; }
+      .col-city, .col-date, .col-end, .col-time { width: 100%; }
+    }
+
+    /* Print-friendly */
+    @media print {
+      .wrap { margin: 0; max-width: none; }
+      .header, .card { box-shadow: none; }
+      a { color: var(--ink); text-decoration: none; }
+    }
+  </style>
+</head>
+
+<body>
+  <div class="wrap">
+    <div class="header">
+      <div>
+        <h1>AI • HR • Finance Events (Mumbai/Pune) </h1>
+        <p class="sub">Sorted by date</p>
+      </div>
+      <div class="badge">8 events</div>
+    </div>
+
+    <div class="card">
+      <table aria-label="Events table">
+        <thead>
+          <tr>
+            <th>CITY</th>
+            <th>DATE</th>
+            <th>END</th>
+            <th>TIME</th>
+            <th>EVENT</th>
+            <th>OPEN</th>
+          </tr>
+        </thead>
+        <tbody>
+          
+    <tr>
+      <td class="col-city">Mumbai</td>
+      <td class="col-date">22 Jan 2026</td>
+      <td class="col-end">2026-01-23</td>
+      <td class="col-time">All day (2-day)</td>
+      <td class="col-event">
+        <div class="event-title">People Matters TechHR Pulse Mumbai 2026</div>
+        <div class="event-meta">
+          <span class='chip'>HR + Tech</span>
+          <span class="sep">•</span>
+          <span class="meta">Conference</span>
+          <span class="sep">•</span>
+          <span class="meta">ITC Maratha</span>
+        </div>
+      </td>
+      <td class="col-open">
+        <a class="btn" href="https://www.peoplematters.in/event/people-matters-techhr-pulse-mumbai" target="_blank" rel="noopener">Open</a>
+      </td>
+    </tr>
+    
+
+    <tr>
+      <td class="col-city">Mumbai</td>
+      <td class="col-date">24 Jan 2026</td>
+      <td class="col-end">2026-01-24</td>
+      <td class="col-time">8:30 AM – 6:00 PM</td>
+      <td class="col-event">
+        <div class="event-title">Global Startup Summit 2026 | Mumbai</div>
+        <div class="event-meta">
+          <span class='chip'>Startups (AI/Fin/HR adjacent)</span>
+          <span class="sep">•</span>
+          <span class="meta">Summit</span>
+          <span class="sep">•</span>
+          <span class="meta">Fairfield by Marriott, Andheri</span>
+        </div>
+      </td>
+      <td class="col-open">
+        <a class="btn" href="https://www.globalstartups.club/event-details-registration/global-startup-summit-2026-mumbai" target="_blank" rel="noopener">Open</a>
+      </td>
+    </tr>
+    
+
+    <tr>
+      <td class="col-city">Mumbai</td>
+      <td class="col-date">24 Jan 2026</td>
+      <td class="col-end">2026-01-24</td>
+      <td class="col-time">See link</td>
+      <td class="col-event">
+        <div class="event-title">Startup Smash – Startup networking (Mumbai)</div>
+        <div class="event-meta">
+          <span class='chip'>Startups (AI/Fin/HR adjacent)</span>
+          <span class="sep">•</span>
+          <span class="meta">Networking</span>
+          <span class="sep">•</span>
+          <span class="meta">Andheri East</span>
+        </div>
+      </td>
+      <td class="col-open">
+        <a class="btn" href="https://www.eventbrite.com/e/startup-smash-craziest-startup-event-of-mumbai-tickets-1980367672017" target="_blank" rel="noopener">Open</a>
+      </td>
+    </tr>
+    
+
+    <tr>
+      <td class="col-city">Mumbai</td>
+      <td class="col-date">10 Feb 2026</td>
+      <td class="col-end">2026-02-11</td>
+      <td class="col-time">2 days</td>
+      <td class="col-event">
+        <div class="event-title">Bharat Fintech Summit (BFS) 2026</div>
+        <div class="event-meta">
+          <span class='chip'>Finance / FinTech</span>
+          <span class="sep">•</span>
+          <span class="meta">Summit</span>
+          <span class="sep">•</span>
+          <span class="meta">JW Marriott, Sahar</span>
+        </div>
+      </td>
+      <td class="col-open">
+        <a class="btn" href="https://bharatfintechsummit.com/" target="_blank" rel="noopener">Open</a>
+      </td>
+    </tr>
+    
+
+    <tr>
+      <td class="col-city">Pune</td>
+      <td class="col-date">12 Mar 2026</td>
+      <td class="col-end">2026-03-12</td>
+      <td class="col-time">All day</td>
+      <td class="col-event">
+        <div class="event-title">ETHRWorld Future Forward Pune 2026</div>
+        <div class="event-meta">
+          <span class='chip'>HR + Work Tech</span>
+          <span class="sep">•</span>
+          <span class="meta">Conference</span>
+          <span class="sep">•</span>
+          <span class="meta">Novotel, Pune</span>
+        </div>
+      </td>
+      <td class="col-open">
+        <a class="btn" href="https://hr.economictimes.indiatimes.com/future-forward-pune" target="_blank" rel="noopener">Open</a>
+      </td>
+    </tr>
+    
+
+    <tr>
+      <td class="col-city">Mumbai</td>
+      <td class="col-date">10 Apr 2026</td>
+      <td class="col-end">2026-04-10</td>
+      <td class="col-time">7:00–10:00 PM</td>
+      <td class="col-event">
+        <div class="event-title">Mumbai Connect 2026 (W.Media)</div>
+        <div class="event-meta">
+          <span class='chip'>Enterprise (AI + BFSI adjacent)</span>
+          <span class="sep">•</span>
+          <span class="meta">Networking</span>
+          <span class="sep">•</span>
+          <span class="meta">True Tramm Trunk, BKC</span>
+        </div>
+      </td>
+      <td class="col-open">
+        <a class="btn" href="https://connect.w.media/events/mumbai-connect-2026/" target="_blank" rel="noopener">Open</a>
+      </td>
+    </tr>
+    
+
+    <tr>
+      <td class="col-city">Mumbai</td>
+      <td class="col-date">23 Apr 2026</td>
+      <td class="col-end">2026-04-23</td>
+      <td class="col-time">See link</td>
+      <td class="col-event">
+        <div class="event-title">Datacenter Summit &amp; Awards 2026</div>
+        <div class="event-meta">
+          <span class='chip'>AI Infra + Enterprise</span>
+          <span class="sep">•</span>
+          <span class="meta">Conference</span>
+          <span class="sep">•</span>
+          <span class="meta">ITC Maratha</span>
+        </div>
+      </td>
+      <td class="col-open">
+        <a class="btn" href="https://datacentersummit.in/" target="_blank" rel="noopener">Open</a>
+      </td>
+    </tr>
+    
+
+    <tr>
+      <td class="col-city">Mumbai</td>
+      <td class="col-date">23 May 2026</td>
+      <td class="col-end">2026-05-23</td>
+      <td class="col-time">9:30 AM – 5:30 PM</td>
+      <td class="col-event">
+        <div class="event-title">Mumbai HR Summit 2026</div>
+        <div class="event-meta">
+          <span class='chip'>HR</span>
+          <span class="sep">•</span>
+          <span class="meta">Summit</span>
+          <span class="sep">•</span>
+          <span class="meta">Holiday Inn (Mumbai)</span>
+        </div>
+      </td>
+      <td class="col-open">
+        <a class="btn" href="https://konfhub.com/mhrs2026" target="_blank" rel="noopener">Open</a>
+      </td>
+    </tr>
+    
+        </tbody>
+      </table>
+    </div>
+  </div>
+</body>
+</html>
